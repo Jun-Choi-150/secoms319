@@ -16,6 +16,8 @@ GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="a
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+    
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -24,6 +26,7 @@ GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="a
       user-select: none;
     }
 
+    
     @media (min-width: 768px) {
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
@@ -67,13 +70,11 @@ GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="a
       -webkit-overflow-scrolling: touch;
     }
   </style>
-
+</head>
   <!--navigation bar-->
 
   <link href="navbar-fixed.css" rel="stylesheet">
-</head>
 
-<body>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="./index.html" style="color: darkolivegreen; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;">P&P</a>
@@ -101,178 +102,91 @@ GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="a
   </nav>
   <!--end navigation bar-->
 
-  <header>
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-
 alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-
 w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script type ="text/javascript">
+      fetch('./data.json')
+      .then(function(response){
+        return response.json();
+      })
+      .then(function(data){
+        appendData(data);
+      })
+      .catch(function (err){
+        console.log('error:' + err)
+      })
+
+
+      function appendData(data){
+
+      let mainContainer = document.getElementsByClassName("populateCards");
+    
+        for(let element of data["plants"]){
+        let mainContainer2 = document.getElementById("card");
+        mainContainer2.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3";
+
+        let col = document.createElement("div");
+        let card = document.createElement("div");
+       col.className = "col";
+       card.className = "card shadow-sm";
+        let image = document.createElement("img");
+        image.className = "card-img-top";
+        image.src = element["imgscr"];
+      
+        card.appendChild(image);
+  
+        let div = document.createElement("div");
+        let div2 = document.createElement("div");
+        let div3 = document.createElement("div");
+        div3.innerHTML = element["price"];
+        div2.innerHTML = element["productID"];
+        div.innerHTML = element["description"];
+
+
+        div2.className = "card-title";
+        div.className = "card-text";
+        div3.className = "card-text";
+
+          div2.style = "font-weight: bold;"
+          div3.style = "font-weight: bold;"
+          card.appendChild(div2);
+          card.appendChild(div);
+          card.appendChild(div3);
+        col.appendChild(card);
+
+
+          mainContainer2.append(col);
+        
+      }
+
+      }
+      
+    </script>
 
 
 
 
-  </header>
 
   <main>
-
-    <!---
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
-      </div>
-    </div>
-  </section>
--->
+    <body>
+   
     <section>
       <h1 style="text-align: center; color:black">Easy Care Houseplants</h1>
       <h2 style="text-align: center; color: rgb(74, 74, 74)">(plus a Fiddle Leaf Fig)</h2>
     </section>
-    <div class="album py-5 bg-light">
-      <div class="container">
+   
+        <!--collection of HOUSEPLANT (using data.json)-->
+        <div id =  "populateCards">
+    
+      <!--begin filling cards dynamically from data.json file-->
+       <div id = "card">
+        
+        </div>
+        </div>
 
-
-        <!--collection of HOUSEPLANTS-->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          <div class="col">
-            <div class="card shadow-sm">
-
-              <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
-              <img src="./plants/rubbertree.jpg" alt="rubbertree">
-              <div class="card-body">
-                <p class="card-text" style=" color: black" ;>The <strong>Rubber Tree</strong> is native to the
-                  rainforests of South America. A balance of bright indirect light and water will make your rubber tree
-                  nice and healthy. </strong></p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <!---- dont need these buttons for now
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-              -->
-                  <small class="text-muted">$45</small>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
-              <img src="./plants/monsterad.jpg" alt="monsteradelisica">
-
-              <div class="card-body">
-                <p class="card-text" style=" color: black" ;>The <strong>Monstera Deliciosa</strong> is an evergreen
-                  tropical vine. Water it every 1-2 weeks and make sure it gets plently of bright to medium indirect
-                  light.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <!---- dont need for now
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-               -->
-                  <small class="text-muted">$75</small>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <!--- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
-              <img src="./plants/pothos.jpg" alt="pothos">
-
-              <div class="card-body">
-                <p class="card-text" style=" color: black" ;><strong>Pothos</strong> are hardy houseplants, nearly
-                  impossible to kill. Allow soil to dry out between waterings and place in bright, indirect light.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <!--- dont need for now
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                 -->
-                  <small class="text-muted"> $25</small>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <!--- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
-              <img src="./plants/wanderingdude.jpg" alt="wanderingdude">
-
-              <div class="card-body">
-                <p class="card-text" style=" color: black" ;><strong>Wandering Dudes</strong> like moist soil. Make sure
-                  to water deeply and to not let it completely dry out. Root rot is an issue so we recommend
-                  bottom-watering this guy.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <!---
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
- -->
-                  <small class="text-muted">$25</small>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow-sm">
-              <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
-              <!--<img src="./flowers/bluebell.jpg" alt="bluebells" width="25%" > -->
-              <img src="./plants/fiddleleaffig.jpg" alt="fiddleleaffig">
-
-              <div class="card-body">
-                <p class="card-text" style=" color: black" ;><strong>Fiddle Leaf Figs</strong> are the exception in this
-                  easy care category. They're pretty finicky, so make sure you place it in bright indirect light, let it
-                  dry out in between waterings, and kick up the humidity.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <!---- dont need for now
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-              -->
-                  <small class="text-muted">$35</small>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <!--- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
-              <img src="./plants/zz.jpg" alt="zzplant">
-
-              <div class="card-body">
-                <p class="card-text" style=" color: black" ;> <strong>ZZ Plants</strong> can tolerate a wide range of
-                  conditions, but it'll thrive in medium to bright indirect light. Make sure to let this one dry out
-                  between waterings.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <!---- dont need for now
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                -->
-                  <small class="text-muted">$20</small>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-
+    
   </main>
 
   <footer class="text-muted py-5">

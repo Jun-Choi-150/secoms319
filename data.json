@@ -1,0 +1,44 @@
+{
+    "plants":[
+        {
+            "productID":"Rubber Tree",
+            "description":"The Rubber Tree is native to the rainforests of South America. A balance of bright indirect light and water will make your rubber tree nice and healthy.",
+            "price":"$45",
+            "imgscr" : "./plants/rubbertree.jpg"
+        },
+        {
+            "productID":"Monstera Deliciosa",
+            "description":"The Monstera Deliciosa is an evergreen tropical vine. Water it every 1-2 weeks and make sure it gets plently of bright to medium indirect light.",
+            "price": "$75",
+            "imgscr" : "./plants/monsterad.jpg "
+        },
+        {
+            "productID" : "Pothos",
+            "description" : "Pothos are hardy houseplants, nearly impossible to kill. Allow soil to dry out between waterings and palce in bright, indrect light.",
+            "price": "$25",
+            "imgscr": "./plants/pothos.jpg"
+        },
+        {
+            "productID" : "Wandering Due",
+            "description" : "Wandering Dudes like moist soil. Make sure to water deeply and to not let it completely dry out. Root rot is an issue with these guys so we do recommend bottom watering.",
+            "price": "$25",
+            "imgscr": "./plants/wanderingdude.jpg"
+        },
+        {
+            "productID": "Fiddle Leaf Fig",
+            "description" : "Fiddle Leaf Figs are the exception in this easy care category. They're pretty finicky, so make sure you place it in bright, indirect light, let it dry out in between waterings, and kick up the hunidity.",
+            "price" : "$40",
+            "imgscr": "./plants/fiddleleaffig.jpg"
+        },
+        {
+            "productID" : "ZZ Plant",
+            "description" : "ZZ Plants can tolerate a wide range of conditions, but it'll thrive in medium to bright indirect light. Make sure to let this one dry out in between waterings.",
+            "price" : "$20",
+            "imgscr":  "./plants/zz.jpg"
+        }
+
+    
+
+    ]
+ 
+}
