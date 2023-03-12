@@ -2,19 +2,19 @@
     {
         "productID" : "Terracotta",
         "description" : "Terracotta pots have been molded and fired. Availible in 6 inch and 8 inch sizes.",
-        "price" : "6' $8   |    8' $10",
+        "price" : ["6' $8  | 8' $10"],
         "imgscr" :"./plants/terracotta.jpg"
     },
     {
         "productID" : "Clay Pot",
         "description" : "Clay pots are unfired and unglazed. Availible in 10 inch size only.",
-        "price" : "10' $10",
+        "price" : ["10' $10"],
         "imgscr" :"./plants/claypots.jpg"
     },
     {
         "productID" : "Yellow Clay Pot",
         "description" : "Our yellow clay pots are unfired and unglazed. Availible in 4 inch, 6 inch, and 8 inche sizes.",
-        "price" : "4' $5    |     6' $7     |     8'  $9",
+        "price" : ["4' $5 | 6' $7  | 8'  $9"],
         "imgscr" :"./plants/terracotta.jpg"
     }
 
