@@ -1,0 +1,10 @@
+/* Show it is fixed to the top */
+body {
+  min-height: 75rem;
+  padding-top: 3.5rem;
+}
+
+.navbar-brand{
+  color: darkolivegreen; 
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

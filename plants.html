@@ -14,197 +14,155 @@ GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="a
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/plants.css" type="text/css">
+  <link rel="stylesheet" href="./styles/navbar.css" type="text/css">
 
-  <style>
-    
-
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-
-    .b-example-divider {
-      height: 3rem;
-      background-color: rgba(0, 0, 0, .1);
-      border: solid rgba(0, 0, 0, .15);
-      border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
-
-    .b-example-vr {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 100vh;
-    }
-
-    .bi {
-      vertical-align: -.125em;
-      fill: currentColor;
-    }
-
-    .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-    }
-
-    .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-    }
-  </style>
 </head>
-  <!--navigation bar-->
-
-  <link href="navbar-fixed.css" rel="stylesheet">
-
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="./index.html" style="color: darkolivegreen; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;">P&P</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./index.html">Home</a> <!--add home page-->
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./plants.html">Plants</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./planters.html">Planters</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./credit.html">About Us</a> <!--add credit page-->
-          </li>
-        </ul>
-      </div>
+<!--navigation bar-->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="./index.html">P&P</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="./index.html">Home</a> <!--add home page-->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="./plants.html">Plants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./planters.html">Planters</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./credit.html">About Us</a> <!--add credit page-->
+        </li>
+      </ul>
     </div>
-  </nav>
-  <!--end navigation bar-->
+  </div>
+</nav>
+<!--end navigation bar-->
 
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-
 alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-
 w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script type ="text/javascript">
-      fetch('./data.json')
-      .then(function(response){
-        return response.json();
-      })
-      .then(function(data){
-        appendData(data);
-      })
-      .catch(function (err){
-        console.log('error:' + err)
-      })
+
+<script type="text/javascript" src="index.js"></script>
 
 
-      function appendData(data){
+<main>
 
-      let mainContainer = document.getElementsByClassName("populateCards");
-    
-        for(let element of data["plants"]){
-        let mainContainer2 = document.getElementById("card");
-        mainContainer2.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3";
+  <body>
 
-        let col = document.createElement("div");
-        let card = document.createElement("div");
-       col.className = "col";
-       card.className = "card shadow-sm";
-        let image = document.createElement("img");
-        image.className = "card-img-top";
-        image.src = element["imgscr"];
-      
-        card.appendChild(image);
-  
-        let div = document.createElement("div");
-        let div2 = document.createElement("div");
-        let div3 = document.createElement("div");
-        div3.innerHTML = element["price"];
-        div2.innerHTML = element["productID"];
-        div.innerHTML = element["description"];
-
-
-        div2.className = "card-title";
-        div.className = "card-text";
-        div3.className = "card-text";
-
-          div2.style = "font-weight: bold;"
-          div3.style = "font-weight: bold;"
-          card.appendChild(div2);
-          card.appendChild(div);
-          card.appendChild(div3);
-        col.appendChild(card);
-
-
-          mainContainer2.append(col);
-        
-      }
-
-      }
-      
-    </script>
-
-
-
-
-
-  <main>
-    <body>
-   
     <section>
       <h1 style="text-align: center; color:black">Easy Care Houseplants</h1>
       <h2 style="text-align: center; color: rgb(74, 74, 74)">(plus a Fiddle Leaf Fig)</h2>
     </section>
-   
-        <!--collection of HOUSEPLANT (using data.json)-->
-        <div id =  "populateCards">
-    
+
+    <!-- Fetch data from json file-->
+    <script>
+      fetchData('./data.json', 'populateCards', 'plants');
+    </script>
+
+
+    <!--collection of HOUSEPLANT (using data.json)-->
+    <div id="populateCards">
+
       <!--begin filling cards dynamically from data.json file-->
-       <div id = "card">
-        
-        </div>
-        </div>
+      <div id="card">
 
-    
-  </main>
-
-  <footer class="text-muted py-5">
-    <div class="container">
-      <p class="float-end mb-1">
-        <a href="#">Back to top</a>
-      </p>
-      <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself! <br> This
-        website isnt real nothing is real</p>
-      <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
-          href="../getting-started/introduction/">getting started guide</a>.</p>
+      </div>
     </div>
-  </footer>
 
 
-  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</main>
+
+<footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself! <br> This
+      website isnt real nothing is real</p>
+    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+        href="../getting-started/introduction/">getting started guide</a>.</p>
+  </div>
+</footer>
+
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+<!-- 
+<script type="text/javascript">
+  fetch('./data.json')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      appendData(data);
+    })
+    .catch(function (err) {
+      console.log('error:' + err)
+    })
+
+
+  function appendData(data) {
+
+    let mainContainer = document.getElementsByClassName("populateCards");
+
+    for (let element of data["plants"]) {
+      let mainContainer2 = document.getElementById("card");
+      mainContainer2.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3";
+
+      let col = document.createElement("div");
+      let card = document.createElement("div");
+      col.className = "col";
+      card.className = "card shadow-sm";
+      let image = document.createElement("img");
+      image.className = "card-img-top";
+      image.src = element["imgscr"];
+
+      card.appendChild(image);
+
+      let div = document.createElement("div");
+      let div2 = document.createElement("div");
+      let div3 = document.createElement("div");
+      div3.innerHTML = element["price"];
+      div2.innerHTML = element["productID"];
+      div.innerHTML = element["description"];
+
+
+      div2.className = "card-title";
+      div.className = "card-text";
+      div3.className = "card-text";
+
+      div2.style = "font-weight: bold;"
+      div3.style = "font-weight: bold;"
+      card.appendChild(div2);
+      card.appendChild(div);
+      card.appendChild(div3);
+      col.appendChild(card);
+
+
+      mainContainer2.append(col);
+
+    }
+
+  }
+
+</script> -->

@@ -1,204 +1,80 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.108.0">
-    <title>Plant & Planter Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.108.0">
+  <title>Plant & Planter Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-
 alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-
 GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/planters.css" type="text/css">
+  <link rel="stylesheet" href="./styles/navbar.css" type="text/css">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+</head>
+<!--navigation bar-->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="./index.html">P&P</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="./index.html">Home</a> <!--add home page-->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="./plants.html">Plants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="./planters.html">Planters</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./credit.html">About Us</a> <!--add credit page-->
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--end navigation bar-->
 
-    
-    
 
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-      
-      
-    </style>
-   </head>
-    <!--navigation bar-->
-
- <link href="navbar-fixed.css" rel="stylesheet">
-  
-  
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html" style="color: darkolivegreen; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;">P&P</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./index.html">Home</a> <!--add home page-->
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./plants.html">Plants</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="./planters.html">Planters</a> 
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./credit.html">About Us</a>  <!--add credit page-->
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!--end navigation bar-->
-    
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-
 alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-
-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-crossorigin="anonymous"></script>
+w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-<script type ="text/javascript">
-  fetch('./dataPlanters.json')
-  .then(function(response){
-    return response.json();
-  })
-  .then(function(data){
-    appendData(data);
-  })
-  .catch(function (err){
-    console.log('error:' + err)
-  })
+<script type="text/javascript" src="index.js"></script>
 
-
-  function appendData(data){
-
-  let mainContainer = document.getElementsByClassName("populateCards");
-
-    for(let element of data["planters"]){
-    let mainContainer2 = document.getElementById("card");
-    mainContainer2.className = "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3";
-
-    let col = document.createElement("div");
-    let card = document.createElement("div");
-   col.className = "col";
-   card.className = "card shadow-sm";
-    let image = document.createElement("img");
-    image.className = "card-img-top";
-    image.src = element["imgscr"];
-  
-    card.appendChild(image);
-
-    let div = document.createElement("div");
-    let div2 = document.createElement("div");
-    let div3 = document.createElement("div");
-    
-
-    div2.innerHTML = element["productID"];
-    div.innerHTML = element["description"];
-    div3.innerHTML = element["price"];
-
-    div2.className = "card-title";
-    div.className = "card-text";
-    div3.className = "card-text";
-
-      div2.style = "font-weight: bold;"
-      div3.style = "font-weight: bold;"
-      card.appendChild(div2);
-      card.appendChild(div);
-      card.appendChild(div3);
-      
-    col.appendChild(card);
-
-
-      mainContainer2.append(col);
-    
-  }
-
-  }
-  
-</script>
-
-  
-  
 
 
 <main>
 
-
-<section>
-  <h1 style = "text-align: center; color:black" >Pots and Planters</h1>
-</section>
+  <section>
+    <h1 style="text-align: center; color:black">Pots and Planters</h1>
+  </section>
   <div class="album py-5 bg-light">
 
+    <!-- Fetch data from json file-->
+    <script>
+      fetchData('./dataPlanters.json', 'populateCards', 'planters');
+    </script>
 
-     <!--collection of PLANTERS (using data.json)-->
-     <div id =  "populateCards">
-    
+    <!--collection of PLANTERS (using data.json)-->
+    <div id="populateCards">
       <!--begin filling cards dynamically from data.json file-->
-       <div id = "card">
-        
-        </div>
-        </div>
+      <div id="card">
+      </div>
+    </div>
 
+  </div>
 
-
-        </div>
-
-
-      
 </main>
 
 <footer class="text-muted py-5">
@@ -206,14 +82,17 @@ crossorigin="anonymous"></script>
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
     </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself! <br> This website isnt real nothing is real</p>
-    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself! <br> This
+      website isnt real nothing is real</p>
+    <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+        href="../getting-started/introduction/">getting started guide</a>.</p>
   </div>
 </footer>
 
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      
-  </body>
+
+</body>
+
 </html>
